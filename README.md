@@ -23,3 +23,6 @@ To load extension:
 4. Navigate to the directory in which your extension files live, and select it.
 
 If the extension is valid, it'll be loaded up and active right away! If it's invalid, an error message will be displayed at the top of the page. Correct the error, and try again.
+
+
+For the Positron Rails App we will need to convert the rails app to Angular.js
