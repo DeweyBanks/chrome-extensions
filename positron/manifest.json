@@ -12,7 +12,7 @@
   },
 
   "content scripts": [{
-    "js": ["js/lib", "js/app"],
+    "js": ["js/lib/jquery-1.11.3.min.js", "js/app"],
     "matches": ["*://*/*"],
     "run at": "document_start"
     }],
