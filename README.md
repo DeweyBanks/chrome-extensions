@@ -25,4 +25,5 @@ To load extension:
 If the extension is valid, it'll be loaded up and active right away! If it's invalid, an error message will be displayed at the top of the page. Correct the error, and try again.
 
 
-For the Positron Rails App we will need to convert the rails app to Angular.js
+currently getting the following error:
+background.html:1 Refused to execute inline script because it violates the following Content Security Policy directive: "script-src 'self' chrome-extension-resource:". Either the 'unsafe-inline' keyword, a hash ('sha256-1W4cDAWNWsyJRHoPpMCX51A_dOahG_dS7SRmelAOZn4='), or a nonce ('nonce-...') is required to enable inline execution.
