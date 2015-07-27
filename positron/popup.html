@@ -1,32 +1,46 @@
 <html>
   <head>
       <title>Positron</title>
+
+  </head>
+  <body>
+    <div>
+      <h1>Welcome to Positron 2!</h1>
+    </div>
+    <div id="jaxText">
+    </div>
       <script>
-alert("loaded");
+alert("loaded from popup");
 var seltext = null;
 
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse)
 {
-  switch(request.message)
-  {
-    case 'setText':
-      window.seltext = request.data
-    break;
+  // switch(request.message)
+  // {
+  //   case 'setText':
+  //     window.seltext = request.data
+  //   break;
 
-    default:
-      sendResponse({data: 'Invalid arguments'});
-    break;
-  }
+  //   default:
+  //     sendResponse({data: 'Invalid arguments'});
+  //   break;
+  // }
+
+  alert('hello world again');
 });
 
 
 function savetext(info,tab)
 {
   var jax = new XMLHttpRequest();
-  jax.open("GET", seltext);
+  jax.open("GET", 'popup.html', seltext);
   jax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   jax.send("text="+seltext);
-  jax.onreadystatechange = function() { if(jax.readyState==4) { alert(jax.responseText);  }}
+  jax.onreadystatechange = function() {
+    if(jax.readyState==4) {
+      document.getElementById('jaxText').innerHTML = jax.responseText;
+      alert("Hello");
+    }}
 }
 
 var contexts = ["selection"];
@@ -37,11 +51,7 @@ for (var i = 0; i < contexts.length; i++)
 }
 
 </script>
-
-  </head>
-  <body>
-    <div>
-      <h1>Welcome to Positron!</h1>
-    </div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   </body>
 </html>
